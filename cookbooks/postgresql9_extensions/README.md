@@ -267,7 +267,8 @@ extension applied to.
 ``postgresql9_pgrowlocks "dbname""``
 
 ##pg_stat_statements
-###supported versions: 9.2
+###supported versions: 9.2 - Note that pg_stat_statements requires a server restart to complete installation
+
 The pg_stat_statements module provides a means for tracking execution statistics of all SQL statements executed by a server.
 
 Enabling this extension:
