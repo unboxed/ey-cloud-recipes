@@ -1,3 +1,10 @@
+include_recipe "whenever"
+
+include_recipe "redis-yml"
+include_recipe "redis"
+
+include_recipe "sidekiq"
+
 #execute "testing" do
 #  command %Q{
 #    echo "i ran at #{Time.now}" >> /root/cheftime
@@ -17,7 +24,7 @@
 # include_recipe "ban"
 
 # uncomment to use the sidekiq recipe. See cookbooks/sidekiq/readme.md for documentation.
-# include_recipe "sidekiq"
+
 
 #uncomment to turn on memcached
 # include_recipe "memcached"
@@ -56,14 +63,8 @@
 #uncomment to run the resque recipe
 # include_recipe "resque"
 
-#uncomment to run redis.yml recipe
-# include_recipe "redis-yml"
-
 #uncomment to run the resque-scheduler recipe
 # include_recipe "resque-scheduler"
-
-#uncomment to run the redis recipe
-#include_recipe "redis"
 
 #uncomment to run the api-keys-yml recipe
 # include_recipe "api-keys-yml"
