@@ -5,6 +5,8 @@ include_recipe "redis"
 
 include_recipe "sidekiq"
 
+include_recipe "nginx"
+
 #execute "testing" do
 #  command %Q{
 #    echo "i ran at #{Time.now}" >> /root/cheftime
