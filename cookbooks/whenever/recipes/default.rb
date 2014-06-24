@@ -3,12 +3,17 @@
 # Recipe:: default
 #
  
-ey_cloud_report "whenever" do
-  message "starting whenever recipe"
-end
-
 node[:applications].each do |app_name, _|
 
+  if ! File.exists?("/data/#{app_name}/current")
+    Chef::Log.info "Whenever was not configured because the app must be deployed first.  Please deploy it then re-run custom recipes."
+    next
+  end
+
+  ey_cloud_report "whenever" do
+    message "starting whenever recipe"
+  end
+  
   if ['app_master'].include?(node[:instance_role])
     # be sure to replace "app_name" with the name of your application.
     local_user = node[:users].first
