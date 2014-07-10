@@ -13,6 +13,8 @@ include_recipe "unicorn"
 
 include_recipe "wkhtmltopdf"
 
+include_recipe "haproxy"
+
 #execute "testing" do
 #  command %Q{
 #    echo "i ran at #{Time.now}" >> /root/cheftime
